@@ -1,0 +1,175 @@
+/*===================*/
+/* main styling */
+/*===================*/
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: #f8f8f8;
+    font-family: 'Barlow', sans-serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: .8em;
+    font-weight: normal;
+    color: grey;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+form button, input {
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Barlow', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px #d4d4d4;
+}
+
+form button:hover {
+    background-color: rgb(241, 241, 241);
+    transition: .3s;
+}
+
+input:hover {
+    background-color: rgb(241, 241, 241);
+    transition: .3s;
+}
+
+.capitalize { /*make names camel case*/
+    text-transform: capitalize;
+}
+
+#no-match { /*hide the "no matches" search message*/
+    display: none;
+}
+
+/*===================*/
+/* grid styling */
+/*===================*/
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.grid-item {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px #d4d4d4;
+    width: 31%; /*three items per row*/
+    margin: 10px;
+    padding: 15px;
+    cursor: pointer; /*"fake" link*/
+}
+
+.grid-item:hover {
+    background-color: rgb(241, 241, 241);
+    transition: .3s;
+}
+
+.profile-image {
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-info {
+    width: 60%;
+}
+
+.hidden {   
+    color: grey;
+    text-align: center;
+}
+
+.grid-item .hidden { /*hide details in grid*/
+    display: none;
+}
+
+/*===================*/
+/* lightbox styling */
+/*===================*/
+
+.lightbox {
+    width: 30%;
+}
+
+.lightbox .hidden { /*show details in lightbox*/
+    display: block;    
+}
+
+.lightbox .profile-image, .lightbox .profile-info {
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox img {
+    width: 150px;
+    height: 150px;
+}
+
+.lightbox h1 {
+    font-size: 1.2em;
+}
+
+/*===================*/
+/* breakpoints */
+/*===================*/
+
+/* tablet, two items per row */
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        margin: 0px;
+    }
+    
+    .grid-item {
+        width: 45%; /*two items per row*/
+    }
+
+    .lightbox {
+        width: 50%;
+    }
+}
+
+/* mobile, one item per row */
+@media screen and (max-width: 650px) {
+    .grid-item {
+        width: 100%;
+        margin: 2px;
+    }
+    
+    .fancybox-slide .grid-item {
+        width: 90%; /*one item per row*/
+    }
+
+    .lightbox {
+        width: 90%;
+    }
+}
